@@ -1,0 +1,143 @@
+
+
+<html>
+
+<head>
+<link rel = "stylesheet"type = "text/css" href="grindman.css">
+    <link rel = "stylesheet"type = "text/css" href="Aside.css">
+</head>
+
+
+<body>
+<div id = menu>
+    <a id = click>Menu</a>
+    <p class = "button">Login</p>
+    <p class = "button">Computers</p>
+    <p class = "button">Telefoons</p>
+    <p class = "button">Contact</p>
+</div>
+<div id = reclame>
+    <img src = "https://view.publitas.com/74/696555/pages/eb54db97619d329469787465dd1b0fb121579adc-at1600.jpg" height = 100px width="100px">
+</div>
+<div id = filterclick><h1>Filter</h1></div>
+
+<div id = aside>
+
+    <form class = "merkfilter">
+        <input type="radio" name="filter" value="samsung">Samsung<br>
+        <input type="radio" name="filter" value="apple">Apple<br>
+        <input type="radio" name="filter" value="overig"> Overig
+        <input type="submit" value="Submit">
+    </form>
+    <form class = "kleurkiezen">
+        selecteer de kleur.<input type="color" name="kleur">
+        <input type="submit" value="Submit">
+    </form>
+</div>
+<main>
+
+<!-- SSSSSHOW container -->
+
+<div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="Slidin fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="https://cdn.reshift.nl/media/media/thumbnails/640/2019031919540062419038099805/google-stadia.png" style="width:100%">
+    </div>
+
+    <div class="Slidin fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="https://www.evetech.co.za/repository/components/msi-gtx-1050-ti-gaming-x-4gb-oc-edition-300px-v1.jpg" style="width:100%">
+    </div>
+
+    <div class="Slidin fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="https://cnet3.cbsistatic.com/img/bomu7LKsURgp6dFD78BAT37NUh0=/2019/02/19/7dbfc7e1-bde8-481c-97c0-c78e9f8bf2fa/samsung-galaxy-s10-hiner-4.jpg" style=width:100%>
+    </div>
+
+    <!-- < en > knoppen -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- indicatoren -->
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+</main>
+<footer>
+    <h1>Contact informatie</h1>
+    <p class ="information"></p>
+</footer>
+</body>
+<script>
+
+    var filter = document.getElementById('aside');
+
+    var clicky = document.getElementById('filterclick')
+//Fitler menu
+    clicky.onclick = function(){
+
+        if (filter.className === 'open') {
+            //verkleinen als de class name open is
+            filter.className = "closed";
+
+        } else
+        //vergrooten als de classnaam closed is
+            filter.className = "open"
+
+    };
+    //Menu MenU
+    var menu = document.getElementById('menu');
+
+    var but = document.getElementById('');
+
+    menu.onclick = function(){
+
+        if (menu.className === 'open') {
+            //verkleinen als de class name open is
+            menu.className = "closed";
+
+        } else
+        //vergrooten als de classnaam closed is
+            menu.className = "open"
+
+    };
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // < en >  knoppen
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Foto bedienen
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("Slidin");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+    }
+
+
+</script>
+</html>
